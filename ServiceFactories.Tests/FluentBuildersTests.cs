@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Linq;
 using Microsoft.Extensions.DependencyInjection;
-using ServiceAccessor.Interfaces;
 using ServiceFactories.Interfaces;
 using ServiceFactories.Tests.Components;
 using Xunit;
