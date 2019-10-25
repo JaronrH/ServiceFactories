@@ -22,7 +22,13 @@ namespace ServiceFactories.Builder
             Lifetime = null;
             ResolverType = null;
             ServiceKeyResolver = null;
+            HasCustomResolver = false;
         }
+
+        /// <summary>
+        /// Is a custom resolver defined?
+        /// </summary>
+        private bool HasCustomResolver { get; set; }
 
         /// <summary>
         /// Parent Accessor Builder to get defaults from.
@@ -89,7 +95,7 @@ namespace ServiceFactories.Builder
             // Validate Accessor Builder
             if (Lifetime == null) throw new Exception("Accessor Service Lifetime is not defined.");
             if (ResolverType == null) throw new Exception("Accessor's Resolver type is not defined.");
-            if (!ServiceKeys.Any()) throw new Exception("No Accessor Key(s) defined.");
+            if (!HasCustomResolver && !ServiceKeys.Any()) throw new Exception("No Accessor Key(s) defined.");
             if (ServiceResolver == null && AsyncServiceResolver == null)
                 throw new Exception("Neither a synchronous or asynchronous Service Resolver is defined.");
 
@@ -198,6 +204,7 @@ namespace ServiceFactories.Builder
         public IFluentAccessorBuilder<TService, TKey> CanResolveKey(Func<TKey, IEnumerable<TKey>, bool> serviceKeyResolver)
         {
             ServiceKeyResolver = serviceKeyResolver ?? throw new ArgumentNullException(nameof(serviceKeyResolver));
+            HasCustomResolver = true;
             return this;
         }
         
