@@ -7,8 +7,8 @@
     <Description>Factory Service add-on to Microsoft.Extensions.DependencyInjection.</Description>
     <PackageId>ServiceFactories</PackageId>
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
-    <PackageReleaseNotes>Initial Release</PackageReleaseNotes>
-    <Version>1.0.0</Version>
+    <PackageReleaseNotes>Updated DI dependancy to .Net Core 3.0</PackageReleaseNotes>
+    <Version>1.0.1</Version>
     <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
     <Company>Jaron Horst</Company>
     <Authors>Jaron Horst</Authors>

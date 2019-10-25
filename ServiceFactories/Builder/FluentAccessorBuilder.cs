@@ -85,12 +85,10 @@ namespace ServiceFactories.Builder
 
             // Apply default Service Key Resolver?
             if (ServiceKeyResolver == null)
-                ServiceKeyResolver = (key, keys) =>
-                {
-                    return key is IComparable
+                ServiceKeyResolver = (key, keys) => 
+                    key is IComparable
                         ? keys.Any(i => ((IComparable) key).CompareTo(i) == 0)
                         : keys.Contains(key);
-                };
 
             // Validate Accessor Builder
             if (Lifetime == null) throw new Exception("Accessor Service Lifetime is not defined.");
