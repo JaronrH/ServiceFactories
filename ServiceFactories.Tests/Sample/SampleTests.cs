@@ -135,7 +135,7 @@ namespace ServiceFactories.Tests.Sample
         /// Can be easily used with #if DEBUG...#endif directives to only scan on debug builds.
         /// </summary>
         [Fact]
-        public void FindMissingFeatures()
+        public void FindMissingFeaturesTest()
         {
             // Get this assembly for interrogation (like in creation in constructor)
             var assemblies = new[] { typeof(SampleTests).Assembly };
