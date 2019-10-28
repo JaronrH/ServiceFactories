@@ -7,8 +7,8 @@
     <Description>Factory Service add-on to Microsoft.Extensions.DependencyInjection.</Description>
     <PackageId>ServiceFactories</PackageId>
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
-    <PackageReleaseNotes>Updated DI dependancy to .Net Core 3.0</PackageReleaseNotes>
-    <Version>1.0.1</Version>
+    <PackageReleaseNotes>Added ability to get all accessors that match a key instead of just the first.</PackageReleaseNotes>
+    <Version>1.0.2</Version>
     <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
     <Company>Jaron Horst</Company>
     <Authors>Jaron Horst</Authors>

@@ -25,7 +25,7 @@ namespace ServiceFactories
         }
 
         /// <summary>
-        /// Get a Service Registration for the given key.
+        /// Get the first Service Registration found for the given key.
         /// </summary>
         /// <param name="serviceKey">Service Key to resolve.</param>
         /// <returns>Service Accessor</returns>
@@ -35,5 +35,13 @@ namespace ServiceFactories
             if (service == null) throw new Exception($"No service accessor defined for {serviceKey}.");
             return service;
         }
+
+        /// <summary>
+        /// Get all Service Registrations for a provided key
+        /// </summary>
+        /// <param name="serviceKey">Service Key to resolve.</param>
+        /// <returns>Service Accessor</returns>
+        public IEnumerable<IServiceAccessor<TService, TKey>> GetAccessors(TKey serviceKey) =>
+            _registrations.Where(s => s.CanResolve(serviceKey));
     }
 }
